@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-29 22:23+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: clients/models.py:11
+msgid "法人名"
+msgstr ""
+#: clients/models.py:11
+msgid "法人名"
+msgstr "Company Name"
+
+#: clients/models.py:12
+msgid "法人コード"
+msgstr "Company Code"
+
+#: clients/models.py:20
+msgid "法人"
+msgstr "Company"
+
+#: clients/models.py:21
+msgid "法人一覧"
+msgstr "Company List"
+
+#: clients/models.py:12
+msgid "法人コード"
+msgstr ""
+
+#: clients/models.py:13
+msgid "住所"
+msgstr ""
+
+#: clients/models.py:14
+msgid "登録日"
+msgstr ""
+
+#: clients/models.py:20
+msgid "法人"
+msgstr ""
+
+#: clients/models.py:21
+msgid "法人一覧"
+msgstr ""
+
+#: clients/models.py:26
+msgid "所属法人"
+msgstr ""
+
+#: clients/models.py:27
+msgid "施設名"
+msgstr ""
+
+#: clients/models.py:28
+msgid "施設コード"
+msgstr ""
+
+#: clients/models.py:29
+msgid "契約中"
+msgstr ""
+
+#: clients/models.py:35
+msgid "施設"
+msgstr ""
+
+#: clients/models.py:36
+msgid "施設一覧"
+msgstr ""
+
+#: config/settings.py:90
+msgid "Japanese"
+msgstr ""
+
+#: config/settings.py:91
+msgid "English"
+msgstr ""
+
+#: config/settings.py:92
+msgid "Vietnamese"
+msgstr ""

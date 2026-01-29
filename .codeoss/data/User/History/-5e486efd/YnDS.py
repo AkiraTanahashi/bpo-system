@@ -1,6 +1,4 @@
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,6 +83,10 @@ LANGUAGE_CODE = 'ja'
 # タイムゾーン（日本の時間にする設定）
 TIME_ZONE = 'Asia/Tokyo'
 # settings.py の一番下あたりに追加
+
+from django.utils.translation import gettext_lazy as _
+import os
+
 # 対応する言語のリスト
 LANGUAGES = [
     ('ja', _('Japanese')),

@@ -14,8 +14,13 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     # accountsなどの他のアプリもここに入れてOKです
     path('accounts/', include('django.contrib.auth.urls')),
-        path('', TemplateView.as_view(template_name='index.html'), name='home'),
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # ↓ これを追加！ログイン機能一式が入ります
+    path('accounts/', include('django.contrib.auth.urls')),
+    
+    # 既存のURL
+    path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path('test/', views.test_firestore),
     path('<str:customer_id>/', views.detail, name='detail'),
-)
-
+]

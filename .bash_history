@@ -92,3 +92,19 @@ git add .
 git commit -m "ドキュメント管理機能（bpo_docs）を追加"
 git push origin master
 python manage.py runserver
+git add .
+git commit -m "管理画面にクライアント管理機能を追加"
+git push origin master
+python manage.py runserver
+mkdir locale
+python manage.py runserver
+sudo apt-get update
+sudo apt-get install gettext -y
+# 英語（en）のメッセージファイルを作成
+python manage.py makemessages -l en
+python manage.py makemessages -l en --ignore=venv --ignore=gopath --ignore=.cache
+python manage.py compilemessages
+python manage.py runserver
+# 辞書ファイルに新しい項目を追加（以前のデータは消えませんので安心してください）
+python manage.py makemessages -l en --ignore=venv --ignore=gopath --ignore=.cache
+python manage.py compilemessages
