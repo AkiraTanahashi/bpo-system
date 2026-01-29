@@ -1,0 +1,22 @@
+2026-01-29 09:58:34.849 [info] 
+
+
+
+
+2026-01-29 09:58:34.872 [info] Extension host agent started.
+2026-01-29 09:58:34.895 [info] Started initializing default profile extensions in extensions installation folder. file:///home/sundersan0807/.codeoss/extensions
+2026-01-29 09:58:34.914 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/sundersan0807/.codeoss/extensions
+2026-01-29 09:58:40.771 [info] [127.0.0.1][14251741][ManagementConnection] New connection established.
+2026-01-29 09:58:40.830 [info] [127.0.0.1][f3a13c3b][ExtensionHostConnection] New connection established.
+2026-01-29 09:58:42.674 [info] [127.0.0.1][f3a13c3b][ExtensionHostConnection] <1452> Launched Extension Host Process.
+2026-01-29 10:11:57.804 [info] [127.0.0.1][14251741][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2026-01-29 10:11:58.036 [info] [127.0.0.1][f3a13c3b][ExtensionHostConnection] <1452> Extension Host Process exited with code: 0, signal: null.
+2026-01-29 10:12:00.045 [info] [127.0.0.1][87566477][ManagementConnection] New connection established.
+2026-01-29 10:12:00.072 [info] [127.0.0.1][154cb3cf][ExtensionHostConnection] New connection established.
+2026-01-29 10:12:00.078 [info] [127.0.0.1][154cb3cf][ExtensionHostConnection] <6772> Launched Extension Host Process.
+2026-01-29 12:37:19.285 [info] [127.0.0.1][87566477][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+2026-01-29 12:41:43.327 [info] [127.0.0.1][87566477][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+2026-01-29 12:41:43.328 [info] [127.0.0.1][154cb3cf][ExtensionHostConnection] The client has reconnected.
+2026-01-29 12:41:43.495 [info] [127.0.0.1][87566477][ManagementConnection] The client has reconnected.
+2026-01-29 13:55:29.702 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
+2026-01-29 14:06:06.004 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted

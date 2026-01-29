@@ -1,0 +1,2 @@
+2026-01-29 10:12:05.337 [info] Log level: Info
+2026-01-29 13:07:55.598 [warning] [GitHubSourceControlHistoryItemDetailsProvider][_loadAssignableUsers] Failed to load assignable user(s) for AkiraTanahashi/bpo-system: Error: No GitHub authentication session available.

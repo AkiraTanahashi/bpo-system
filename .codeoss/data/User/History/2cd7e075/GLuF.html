@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>顧客リスト | IKIGAI System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4">📋 顧客管理システム</h1>
+        
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>氏名</th>
+                            <th>ステータス</th>
+                            <th>メモ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for customer in customers %}
+                        <tr>
+                            <td>{{ customer.id|slice:":8" }}...</td>
+                            <td class="fw-bold">{{ customer.name }}</td>
+                            <td>
+                                <span class="badge bg-primary">{{ customer.status }}</span>
+                            </td>
+                            <td>{{ customer.memo }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center">データがありません</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="mt-3">
+            <a href="/test" class="btn btn-outline-secondary">テストデータを追加する</a>
+        </div>
+    </div>
+</body>
+</html>

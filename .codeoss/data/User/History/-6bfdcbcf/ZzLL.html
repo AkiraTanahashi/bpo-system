@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BPOシステム Home</title>
+</head>
+<body>
+    <h1>ようこそ！</h1>
+    <p>ログインに成功しました。</p>
+    
+    {% if user.is_authenticated %}
+        <p>こんにちは、{{ user.username }} さん。</p>
+        <p><a href="{% url 'logout' %}">ログアウト</a></p>
+    {% else %}
+        <p>ログインしていません。</p>
+        <a href="{% url 'login' %}">ログイン</a>
+    {% endif %}
+</body>
+</html>
