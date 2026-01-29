@@ -88,3 +88,7 @@ python manage.py startapp documents
 python manage.py startapp bpo_docs
 python manage.py makemigrations bpo_docs
 python manage.py migrate
+git add .
+git commit -m "ドキュメント管理機能（bpo_docs）を追加"
+git push origin master
+python manage.py runserver
