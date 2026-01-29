@@ -78,3 +78,13 @@ rm -rf .git
 echo ".config/" >> .gitignore
 echo ".cache/" >> .gitignore
 git init
+git reset --hard origin/master
+git clean -fd
+python manage.py runserver
+python manage.py startapp clients
+python manage.py makemigrations clients
+python manage.py migrate
+python manage.py startapp documents
+python manage.py startapp bpo_docs
+python manage.py makemigrations bpo_docs
+python manage.py migrate

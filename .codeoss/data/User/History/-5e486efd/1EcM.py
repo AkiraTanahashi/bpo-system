@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core', 
     'clients',
-    'bpo_docs',
 ]
 
 MIDDLEWARE = [
