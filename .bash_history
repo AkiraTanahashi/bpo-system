@@ -129,3 +129,9 @@ python manage.py runserver
 pip install google-cloud-firestore
 pip install djangorestframework markdown django-filter
 python manage.py runserver
+git add .
+git commit -m "API機能の導入とログ管理機能の修正"
+git push origin master
+python manage.py makemigrations clients
+python manage.py migrate
+python manage.py runserver

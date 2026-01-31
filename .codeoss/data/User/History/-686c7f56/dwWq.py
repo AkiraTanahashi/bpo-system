@@ -1,6 +1,6 @@
 from django.db import models
 import uuid
-from django.conf import settings 
+# 翻訳用の関数をインポート（これが「_」の正体です）
 from django.utils.translation import gettext_lazy as _
 
 # 1. 会社（法人）モデル
@@ -34,6 +34,10 @@ class Facility(models.Model):
     class Meta:
         verbose_name = _("施設")
         verbose_name_plural = _("施設一覧")
+# clients/models.py の続き（既存のCompany, Facilityの下に追加）
+
+# Djangoの標準ユーザーと紐付けるためにインポート
+from django.conf import settings 
 
 # 3. 介護利用者・対象者 (Patient/Client)
 class Client(models.Model):
