@@ -1,0 +1,28 @@
+2026-01-31 04:54:23.722 [warning] Dir "/home/sundersan0807/.pixi/envs" is not watchable (directory does not exist)
+2026-01-31 04:54:29.461 [info] Skipping ActivatedEnv Detection:  process.env.VSCODE_CLI !== '1'
+2026-01-31 04:54:29.468 [info] Python interpreter path: ./venv/bin/python
+2026-01-31 04:54:29.969 [info] > pyenv which python
+2026-01-31 04:54:29.969 [info] cwd: .
+2026-01-31 04:54:32.746 [info] Starting Jedi language server for sundersan0807.
+2026-01-31 04:56:56.121 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/settings.py
+2026-01-31 05:02:28.777 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/clients/serializers.py
+2026-01-31 05:02:30.520 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/clients/serializers.py
+2026-01-31 05:02:49.508 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/clients/views.py
+2026-01-31 05:03:11.514 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/clients/url.py
+2026-01-31 05:03:15.528 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/clients/url.py
+2026-01-31 05:04:32.144 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:04:33.181 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:04:59.970 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:05:03.027 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:05:20.590 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:05:28.221 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:05:30.039 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:05:32.732 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:05:36.376 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:06:40.725 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:06:42.750 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:06:44.313 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:06:45.441 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:06:48.048 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:06:49.486 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py
+2026-01-31 05:06:51.008 [info] Discover tests for workspace name: sundersan0807 - uri: /home/sundersan0807/config/urls.py

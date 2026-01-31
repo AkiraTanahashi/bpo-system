@@ -108,3 +108,24 @@ python manage.py runserver
 # 辞書ファイルに新しい項目を追加（以前のデータは消えませんので安心してください）
 python manage.py makemessages -l en --ignore=venv --ignore=gopath --ignore=.cache
 python manage.py compilemessages
+# 1. 全ての変更をステージング（荷造り）
+git add .
+# 2. コミット（記録）
+# メッセージ：「多言語対応（英語化）の実装と辞書ファイルの更新」
+git commit -m "多言語対応（英語化）の実装と辞書ファイルの更新"
+# 3. プッシュ（送信）
+git push origin master
+source /home/sundersan0807/venv/bin/activate
+python manage.py startapp masters
+python manage.py startapp logs
+python manage.py makemigrations masters
+python manage.py migrate
+python manage.py makemessages -l en --ignore=venv --ignore=gopath --ignore=.cache
+python manage.py compilemessages
+python manage.py makemigrations logs
+python manage.py migrate
+pyhon manage.py runserver
+python manage.py runserver
+pip install google-cloud-firestore
+pip install djangorestframework markdown django-filter
+python manage.py runserver

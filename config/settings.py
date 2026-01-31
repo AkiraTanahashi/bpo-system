@@ -6,13 +6,11 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t@spei%c&+4@2x(wj58r-049rx%fly1jlv$*$!dbo^ifun0%&x'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-t@spei%c&+4@2x(wj58r-049rx%fly1jlv$*$!dbo^ifun0%&x')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 ALLOWED_HOSTS = ['*']
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -22,9 +20,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'core', 
     'clients',
     'bpo_docs',
+    'masters',
+    'logs',
 ]
 
 MIDDLEWARE = [
@@ -43,7 +44,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,8 +88,8 @@ TIME_ZONE = 'Asia/Tokyo'
 # settings.py の一番下あたりに追加
 # 対応する言語のリスト
 LANGUAGES = [
-    ('ja', _('Japanese')),
     ('en', _('English')),
+    ('ja', _('Japanese')),
     ('vi', _('Vietnamese')), # ベトナム語も視野に入れておきます
 ]
 
@@ -97,9 +98,7 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
-USE_X_FORWARDED_HOST = True
-
-TIME_ZONE = 'UTC'
+USE_X_FORWARDED_HOST = True # This is fine, but often placed with other security settings.
 
 USE_I18N = True
 
