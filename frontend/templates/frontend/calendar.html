@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IKIGAI Integrated Workspace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <style>
+    /* Googleライクな基本設定 */
+    body, html { height: 100%; margin: 0; overflow: hidden; font-family: 'Roboto', sans-serif; background: #fff; }
+    
+    .dashboard-container { display: flex; height: 100vh; width: 100%; }
+
+    /* 左サイドバー */
+    .sidebar-left {
+      width: 260px; background: #fff; border-right: 1px solid #dadce0;
+      display: flex; flex-direction: column; padding: 12px;
+      transition: width 0.2s; flex-shrink: 0;
+    }
+    .app-title { font-size: 22px; color: #5f6368; display: flex; align-items: center; margin-bottom: 20px; padding-left: 10px;}
+    .app-title .material-icons { margin-right: 8px; color: #1967d2; }
+
+    /* ユーザーリスト */
+    .section-label { font-size: 11px; font-weight: 500; color: #5f6368; margin: 15px 0 5px 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .user-item {
+      padding: 8px 10px 8px 16px; border-radius: 0 20px 20px 0; cursor: pointer;
+      display: flex; align-items: center; font-size: 14px; color: #3c4043; margin-bottom: 2px;
+    }
+    .user-item:hover { background-color: #f1f3f4; }
+    .user-item.active { background-color: #e8f0fe; color: #1967d2; font-weight: 500; }
+    .user-avatar { width: 32px; height: 32px; border-radius: 50%; margin-right: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;}
+
+    /* 中央メイン */
+    .main-content { flex-grow: 1; position: relative; display: flex; flex-direction: column; min-width: 0; }
+    #calendar { flex-grow: 1; padding: 20px; }
+
+    /* 右サイドバー（開閉式プロパティ） */
+    .sidebar-right {
+      width: 300px; background: #fff; border-left: 1px solid #dadce0;
+      box-shadow: -4px 0 8px rgba(0,0,0,0.05);
+      position: absolute; right: 0; top: 0; bottom: 0; z-index: 1000;
+      background-color: white;
+      transform: translateX(100%); /* デフォルトは隠す */
+      transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      display: flex; flex-direction: column;
+    }
+    .sidebar-right.open { transform: translateX(0); } /* クラス付与で表示 */
+
+    /* 右サイドバーのヘッダー */
+    .prop-header { padding: 16px; border-bottom: 1px solid #dadce0; display: flex; justify-content: space-between; align-items: center; }
+    .close-prop-btn { cursor: pointer; color: #5f6368; border: none; background: none; }
+
+    /* アクションメニュー（ポップオーバー風） */
+    .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
+    .action-card {
+      border: 1px solid #dadce0; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer;
+      transition: 0.2s; background: white;
+    }
+    .action-card:hover { background: #f8f9fa; box-shadow: 0 1px 3px rgba(0,0,0,0.12); border-color: transparent; }
+    .action-card .material-icons { font-size: 32px; margin-bottom: 8px; color: #1967d2; }
+    .action-label { font-size: 13px; color: #3c4043; }
+
+    /* Google風ボタン */
+    .btn-google { background-color: #1a73e8; color: white; border: none; border-radius: 4px; padding: 8px 24px; font-weight: 500; }
+    .btn-google:hover { background-color: #1765cc; color: white; }
+
+  </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+  
+  <div class="sidebar-left">
+    <div class="app-title">
+      <span class="material-icons">diversity_3</span>
+      <span>IKIGAI Workspace</span>
+    </div>
+    
+    <div class="mb-3 px-2">
+      <a href="{% url 'menu' %}" class="btn btn-outline-secondary btn-sm w-100" style="border-radius: 18px;">← メニュー</a>
+    </div>
+
+    <div class="section-label">利用者 (Clients)</div>
+    <div class="user-item active" onclick="switchUser(this, 'client_001', '田中 太郎')">
+      <div class="user-avatar" style="background: #ef6c00;">田</div>
+      <div>田中 太郎</div>
+    </div>
+    <div class="user-item" onclick="switchUser(this, 'client_002', '鈴木 ハナ')">
+      <div class="user-avatar" style="background: #ef6c00;">鈴</div>
+      <div>鈴木 ハナ</div>
+    </div>
+
+    <div class="section-label">職員 (Staff)</div>
+    <div class="user-item" onclick="switchUser(this, 'staff_999', '管理者')">
+      <div class="user-avatar" style="background: #1967d2;">管</div>
+      <div>管理者</div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="px-4 pt-3 d-flex align-items-center justify-content-between">
+      <h5 class="m-0 text-secondary" id="currentViewLabel">田中 太郎 さんのノート</h5>
+      
+      <button class="btn btn-light btn-sm rounded-circle" onclick="toggleRightSidebar()" title="詳細パネル">
+        <span class="material-icons" style="font-size: 20px; color: #5f6368;">info</span>
+      </button>
+    </div>
+    <div id="calendar"></div>
+  </div>
+
+  <div class="sidebar-right" id="rightSidebar">
+    <div class="prop-header">
+      <h6 class="m-0" id="propTitle">詳細情報</h6>
+      <button class="close-prop-btn material-icons" onclick="toggleRightSidebar()">close</button>
+    </div>
+    <div class="p-3" id="propContent" style="overflow-y: auto;">
+      <div class="text-center text-muted mt-5">
+        <span class="material-icons" style="font-size: 48px; color: #dadce0;">event_note</span>
+        <p class="mt-3 small">日付や予定をクリックすると<br>ここに詳細が表示されます。</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal fade" id="actionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg" style="border-radius: 12px;">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title" style="font-size: 18px;">アクションを選択</h5>
+        <span class="text-muted ms-2 small" id="modalDateDisplay"></span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="action-grid">
+          <div class="action-card" onclick="startAction('note')">
+            <span class="material-icons">edit_note</span>
+            <div class="action-label">日報・メモ</div>
+          </div>
+          <div class="action-card" onclick="triggerFileUpload()">
+            <span class="material-icons">upload_file</span>
+            <div class="action-label">ファイル保存</div>
+          </div>
+          <div class="action-card" onclick="startAction('vital')">
+            <span class="material-icons">monitor_heart</span>
+            <div class="action-label">バイタル記録</div>
+          </div>
+          <div class="action-card" onclick="startAction('schedule')">
+            <span class="material-icons">event</span>
+            <div class="action-label">予定を追加</div>
+          </div>
+        </div>
+        
+        <input type="file" id="hiddenFileInput" style="display: none;" onchange="handleFileSelect(this)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentUserId = 'client_001'; // 現在選択中のユーザーID
+  let rightSidebar = document.getElementById('rightSidebar');
+  let calendar;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var actionModal = new bootstrap.Modal(document.getElementById('actionModal'));
+
+    calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek' // Dayはクリックで遷移するのでヘッダーからは除去も可
+      },
+      locale: 'ja',
+      height: '100%',
+      navLinks: true, // 日付クリックでDayViewへ
+      editable: true,
+      dayMaxEvents: true,
+      
+      // デモデータ
+      events: [
+        { title: 'デイサービス', start: new Date(), color: '#1a73e8' },
+        { title: '血圧: 130/85', start: new Date(), color: '#ea4335', display: 'list-item' } // メモ風表示
+      ],
+
+      // 日付クリック -> アクションメニュー表示
+      dateClick: function(info) {
+        document.getElementById('modalDateDisplay').innerText = info.dateStr;
+        actionModal.show();
+        // プロパティパネルは閉じる
+        rightSidebar.classList.remove('open');
+      },
+
+      // 予定クリック -> 右サイドバーを開いて詳細表示
+      eventClick: function(info) {
+        info.jsEvent.preventDefault();
+        showProperty(info.event);
+      }
+    });
+
+    calendar.render();
+  });
+
+  // ユーザー切り替え処理
+  function switchUser(element, userId, userName) {
+    // 1. UIの選択状態を更新
+    document.querySelectorAll('.user-item').forEach(el => el.classList.remove('active'));
+    element.classList.add('active');
+
+    // 2. 変数を更新
+    currentUserId = userId;
+    document.getElementById('currentViewLabel').innerText = userName + ' さんのノート';
+
+    // 3. カレンダーのデータをリフレッシュ（擬似的な処理）
+    // 本来はここで API (fetch) を叩いて、userId に紐づくイベントを取得します
+    console.log(`Switching to User ID: ${userId}`);
+    
+    // デモ: ユーザーが変わった感を出すためにイベントを書き換え
+    calendar.removeAllEvents();
+    if(userId.includes('client')) {
+      calendar.addEvent({ title: '入浴介助', start: new Date(), color: '#1a73e8' });
+      calendar.addEvent({ title: '日報: 元気', start: new Date(), color: '#34a853' });
+    } else {
+      calendar.addEvent({ title: '全体会議', start: new Date(), color: '#fbbc04', textColor: 'black' });
+    }
+  }
+
+  // 右サイドバーの開閉
+  function toggleRightSidebar() {
+    rightSidebar.classList.toggle('open');
+  }
+
+  // プロパティ表示（右サイドバー）
+  function showProperty(event) {
+    document.getElementById('propTitle').innerText = event.title;
+    document.getElementById('propContent').innerHTML = `
+      <div class="mb-3">
+        <label class="small text-muted">日時</label>
+        <div>${event.start.toLocaleString()}</div>
+      </div>
+      <div class="mb-3">
+        <label class="small text-muted">担当者</label>
+        <div>${currentUserId} (自動記録)</div>
+      </div>
+      <div class="mb-3">
+        <label class="small text-muted">メモ・詳細</label>
+        <textarea class="form-control" rows="5" style="resize:none;">${event.extendedProps.description || '詳細なし'}</textarea>
+      </div>
+      <button class="btn btn-google w-100">保存する</button>
+    `;
+    rightSidebar.classList.add('open');
+  }
+
+  // ファイルアップロード（画面遷移なし）
+  function triggerFileUpload() {
+    document.getElementById('hiddenFileInput').click();
+  }
+
+  function handleFileSelect(input) {
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      alert(`【画面遷移なし】\nファイル「${file.name}」を受け取りました。\n\n裏側でAPI経由で ${currentUserId} さんのフォルダに保存します。`);
+      
+      // モーダルを閉じる
+      bootstrap.Modal.getInstance(document.getElementById('actionModal')).hide();
+      
+      // カレンダーに「ファイル添付あり」のアイコンを追加（即時反映）
+      calendar.addEvent({
+        title: '📎 ' + file.name,
+        start: new Date(), // 本来はクリックした日付
+        color: '#5f6368'
+      });
+    }
+  }
+
+  // その他のアクション
+  function startAction(type) {
+    bootstrap.Modal.getInstance(document.getElementById('actionModal')).hide();
+    if(type === 'note') {
+        // 本来は日報入力用の別のモーダルを出すか、右サイドバーを開いて入力させる
+        alert('日報入力モード：\n右サイドバーが開いて、そのまま入力・保存できるようにします。');
+        toggleRightSidebar();
+    }
+  }
+</script>
+
+</body>
+</html>

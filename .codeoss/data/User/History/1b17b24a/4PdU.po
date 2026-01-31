@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-31 14:20+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: clients/models.py
+msgid "介護利用者"
+msgstr "Client (Care Recipient)"
+
+msgid "利用者マスタ"
+msgstr "Client List"
+
+msgid "職員情報"
+msgstr "Staff Profile"
+
+
+
+
+
+
+#: bpo_docs/models.py:9
+msgid "レシート・領収書"
+msgstr "Receipt"
+
+#: bpo_docs/models.py:10
+msgid "請求書"
+msgstr ""
+
+#: bpo_docs/models.py:11
+msgid "契約書"
+msgstr ""
+
+#: bpo_docs/models.py:12
+msgid "日報・介護記録"
+msgstr "report"
+
+#: bpo_docs/models.py:13
+msgid "給与明細"
+msgstr ""
+
+#: bpo_docs/models.py:14 logs/models.py:24
+msgid "その他"
+msgstr "other"
+
+#: bpo_docs/models.py:18
+msgid "解析待ち"
+msgstr ""
+
+#: bpo_docs/models.py:19
+msgid "AI解析中"
+msgstr ""
+
+#: bpo_docs/models.py:20
+msgid "確認済み"
+msgstr ""
+
+#: bpo_docs/models.py:21
+msgid "承認完了"
+msgstr ""
+
+#: bpo_docs/models.py:26 clients/models.py:20 masters/models.py:12
+#: masters/models.py:32 masters/models.py:52
+msgid "法人"
+msgstr "Company"
+
+#: bpo_docs/models.py:27 clients/models.py:35
+msgid "施設"
+msgstr "Facility"
+
+#: bpo_docs/models.py:29
+msgid "ファイル"
+msgstr "file"
+
+#: bpo_docs/models.py:31
+msgid "文書タイプ"
+msgstr ""
+
+#: bpo_docs/models.py:32
+msgid "ステータス"
+msgstr "status"
+
+#: bpo_docs/models.py:34
+msgid "AI解析データ"
+msgstr ""
+
+#: bpo_docs/models.py:36
+msgid "アップロード日時"
+msgstr "upload date"
+
+#: bpo_docs/models.py:37
+msgid "更新日時"
+msgstr "update"
+
+#: bpo_docs/models.py:44
+msgid "ドキュメント"
+msgstr "Document"
+
+#: bpo_docs/models.py:45
+msgid "ドキュメント一覧"
+msgstr "Document List"
+
+#: clients/models.py:11
+msgid "法人名"
+msgstr "Company Name"
+
+#: clients/models.py:12
+msgid "法人コード"
+msgstr "Company Code"
+
+#: clients/models.py:13 clients/models.py:52
+msgid "住所"
+msgstr "adress"
+
+#: clients/models.py:14 clients/models.py:54 masters/models.py:20
+#: masters/models.py:40 masters/models.py:66
+msgid "登録日"
+msgstr ""
+
+#: clients/models.py:21
+msgid "法人一覧"
+msgstr "Company List"
+
+#: clients/models.py:26 clients/models.py:41 clients/models.py:67
+#: logs/models.py:46
+msgid "所属法人"
+msgstr ""
+
+#: clients/models.py:27
+msgid "施設名"
+msgstr ""
+
+#: clients/models.py:28
+msgid "施設コード"
+msgstr ""
+
+#: clients/models.py:29 masters/models.py:60
+msgid "契約中"
+msgstr ""
+
+#: clients/models.py:36
+msgid "施設一覧"
+msgstr "Facility List"
+
+#: clients/models.py:42
+msgid "利用施設"
+msgstr ""
+
+#: clients/models.py:45
+msgid "利用者名"
+msgstr "Client Name"
+
+#: clients/models.py:46
+msgid "カナ氏名"
+msgstr ""
+
+#: clients/models.py:49
+msgid "被保険者番号"
+msgstr "Insured Number"
+
+#: clients/models.py:51
+msgid "生年月日"
+msgstr ""
+
+#: clients/models.py:60
+msgid "介護利用者"
+msgstr ""
+
+#: clients/models.py:61
+msgid "利用者マスタ"
+msgstr ""
+
+#: clients/models.py:66
+msgid "ログインユーザー"
+msgstr ""
+
+#: clients/models.py:71
+msgid "管理者"
+msgstr ""
+
+#: clients/models.py:72
+#, fuzzy
+#| msgid "施設"
+msgid "施設長"
+msgstr "Facility"
+
+#: clients/models.py:73
+msgid "一般職員"
+msgstr ""
+
+#: clients/models.py:74
+msgid "パート・アルバイト"
+msgstr ""
+
+#: clients/models.py:76
+msgid "権限ロール"
+msgstr ""
+
+#: clients/models.py:78
+msgid "入社日"
+msgstr ""
+
+#: clients/models.py:84
+msgid "職員情報"
+msgstr ""
+
+#: clients/models.py:85
+msgid "職員管理"
+msgstr "Staff Management"
+
+#: config/settings.py:91
+msgid "English"
+msgstr ""
+
+#: config/settings.py:92
+msgid "Japanese"
+msgstr ""
+
+#: config/settings.py:93
+msgid "Vietnamese"
+msgstr ""
+
+#: logs/models.py:12
+msgid "実行ユーザー"
+msgstr ""
+
+#: logs/models.py:14
+msgid "対象法人"
+msgstr ""
+
+#: logs/models.py:18
+msgid "ログイン"
+msgstr ""
+
+#: logs/models.py:19
+msgid "ログアウト"
+msgstr ""
+
+#: logs/models.py:20
+msgid "作成"
+msgstr ""
+
+#: logs/models.py:21
+#, fuzzy
+#| msgid "更新日時"
+msgid "更新"
+msgstr "update"
+
+#: logs/models.py:22
+msgid "削除"
+msgstr ""
+
+#: logs/models.py:23
+msgid "データ出力"
+msgstr ""
+
+#: logs/models.py:26
+msgid "操作タイプ"
+msgstr ""
+
+#: logs/models.py:27
+msgid "詳細内容"
+msgstr ""
+
+#: logs/models.py:30
+msgid "IPアドレス"
+msgstr ""
+
+#: logs/models.py:31
+msgid "実行日時"
+msgstr ""
+
+#: logs/models.py:37
+msgid "操作ログ"
+msgstr ""
+
+#: logs/models.py:38
+msgid "操作ログ一覧"
+msgstr ""
+
+#: logs/models.py:45
+msgid "職員"
+msgstr ""
+
+#: logs/models.py:49
+msgid "出勤時間"
+msgstr ""
+
+#: logs/models.py:50
+msgid "退勤時間"
+msgstr ""
+
+#: logs/models.py:53
+msgid "位置情報"
+msgstr ""
+
+#: logs/models.py:56
+msgid "備考"
+msgstr ""
+
+#: logs/models.py:64
+msgid "勤怠記録"
+msgstr ""
+
+#: logs/models.py:65
+msgid "勤怠ログ一覧"
+msgstr ""
+
+#: masters/models.py:15
+msgid "医療機関コード"
+msgstr ""
+
+#: masters/models.py:16
+msgid "医療機関名"
+msgstr ""
+
+#: masters/models.py:17
+msgid "郵便番号"
+msgstr ""
+
+#: masters/models.py:18
+msgid "診療科コード"
+msgstr ""
+
+#: masters/models.py:26
+msgid "医療機関"
+msgstr ""
+
+#: masters/models.py:27
+msgid "医療機関マスタ"
+msgstr ""
+
+#: masters/models.py:35
+msgid "氏名"
+msgstr ""
+
+#: masters/models.py:36
+msgid "担当者コード"
+msgstr ""
+
+#: masters/models.py:37
+msgid "連絡先"
+msgstr ""
+
+#: masters/models.py:38
+msgid "所属事業所名"
+msgstr ""
+
+#: masters/models.py:46
+msgid "ケアマネジャー"
+msgstr ""
+
+#: masters/models.py:47
+msgid "ケアマネマスタ"
+msgstr ""
+
+#: masters/models.py:55
+msgid "事務所名"
+msgstr ""
+
+#: masters/models.py:56
+msgid "事務所コード"
+msgstr ""
+
+#: masters/models.py:61
+msgid "調整中"
+msgstr ""
+
+#: masters/models.py:62
+msgid "解約済"
+msgstr ""
+
+#: masters/models.py:64
+#, fuzzy
+#| msgid "ステータス"
+msgid "契約ステータス"
+msgstr "status"
+
+#: masters/models.py:72
+msgid "会計事務所"
+msgstr ""
+
+#: masters/models.py:73
+msgid "会計事務所マスタ"
+msgstr ""

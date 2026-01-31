@@ -293,3 +293,7 @@ AssertionError: Cannot infer the keyword <Keyword: from>
 
 2026-01-31 05:16:05.392 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "223"
 
+2026-01-31 05:58:52.577 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "318"
+
+2026-01-31 05:59:03.869 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "328"
+

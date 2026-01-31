@@ -135,3 +135,16 @@ git push origin master
 python manage.py makemigrations clients
 python manage.py migrate
 python manage.py runserver
+git add .
+git commit -m "DBA（利用者・職員管理）テーブルの実装完了"
+git push origin master
+python manage.py makemessages -l en --ignore=venv --ignore=gopath --ignore=.cache
+python manage.py compilemessages
+python manage.py startapp frontend
+python manage.py runserver
+source /home/sundersan0807/venv/bin/activate
+python manage.py runserver
+pip install djangorestframework markdown django-filter
+python manage.py runserver
+git add
+python manage.py runserver
